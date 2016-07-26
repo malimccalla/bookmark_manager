@@ -12,4 +12,4 @@ end
 
 DataMapper.setup(:default, "postgres://localhost/bookmark_manager_test")
 DataMapper.finalize
-DataMapper.auto_migrate! #Don't forget about me
+DataMapper.auto_upgrade! #Don't forget about me :'(

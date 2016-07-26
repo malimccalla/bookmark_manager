@@ -11,3 +11,15 @@ feature 'display links' do
     end
   end
 end
+
+feature 'add a link' do
+  scenario 'user can create links' do
+    visit '/links/new'
+    fill_in :title, with: 'Facebook'
+    fill_in :url, with: 'http://www.facebook.com'
+    click_button 'submit'
+    within 'ul#links' do
+      expect(page).to have_content('Facebook')
+    end
+  end
+end
