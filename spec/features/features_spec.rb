@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'display links' do
   scenario 'it displays links' do
-    Link.create(url: 'http://www.bcc.co.uk/news', name: 'What is this???')
+    Link.create(url: 'http://www.bcc.co.uk/news', title: 'What is this???')
     visit '/links'
     expect(page.status_code).to eq 200
 
