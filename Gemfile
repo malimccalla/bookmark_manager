@@ -1,14 +1,13 @@
-source "https://rubygems.org"
-
-ruby '2.3.0'
-
-gem 'sinatra'
+source 'https://rubygems.org'
 gem 'rake'
+# gem 'activerecord'
+# gem 'pg'
+gem 'sinatra'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'database_cleaner'
-group :test do
-  gem 'rspec'
-  gem 'rspec-sinatra'
-  gem 'capybara'
-end
+gem 'rspec'
+gem 'rspec-sinatra'
+gem 'capybara'
+# gem 'rspec'
+# gem 'faker'
