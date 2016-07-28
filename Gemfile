@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 gem 'rake'
-
+gem 'data_mapper'
 
 group :test do
   gem 'rspec'
@@ -13,7 +13,6 @@ group :test do
 end
 
 group :development do
-  gem 'data_mapper'
   gem 'dm-postgres-adapter'
   gem 'sinatra'
 end
