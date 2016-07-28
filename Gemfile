@@ -6,6 +6,7 @@ gem 'rake'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'sinatra'
+gem 'bcrypt'
 
 group :test do
   gem 'rspec'
@@ -13,7 +14,3 @@ group :test do
   gem 'rspec-sinatra'
   gem 'database_cleaner'
 end
-
-# group :development do
-#
-# end
