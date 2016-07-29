@@ -11,7 +11,13 @@ class User
   # validates_presence_of :email not needed because of required: true
 
   property :id,      Serial
-  property :email,   String, format: :email_address, required: true
+  property :email,   String, required: true, unique: true,
+    format: :email_address,
+    :messages => {
+      presence: :"We need your email address",
+      is_unique: "We already have that email address",
+      :format => "Whoa there cowboy!! That aint no email"
+    }
   property :password_digest, String, length: 60
 
   def password=(password)

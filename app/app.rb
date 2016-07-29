@@ -28,7 +28,7 @@ set :session_secret, "Mali's secret"
         session[:user_id]= @user.id
         redirect '/links'
       else
-        flash.now[:notice] = 'Passwords dont match'
+        flash.now[:errors] = @user.errors.full_messages
         erb :'user/new'
       end
     end
