@@ -8,7 +8,7 @@ class BookmarkManager < Sinatra::Base
 
 register Sinatra::Flash
 
-enable :sessionsbu
+enable :sessions
 set :session_secret, "Mali's secret"
 
   get '/' do
@@ -16,20 +16,21 @@ set :session_secret, "Mali's secret"
   end
 
   get '/users/new' do
+    @user = User.new
     erb :'user/new'
   end
 
     post '/users' do
-      user = User.create(email: params[:email],
+      @user = User.create(email: params[:email],
                         password: params[:password],
                         password_confirmation: params[:password_confirmation])
-      if user.save
-        session[:user_id]= user.id
+      if @user.save
+        session[:user_id]= @user.id
         redirect '/links'
       else
         flash.now[:notice] = 'Passwords dont match'
         erb :'user/new'
-    end
+      end
     end
 
     helpers do

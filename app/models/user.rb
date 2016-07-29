@@ -13,7 +13,7 @@ class User
   property :password_digest, String, length: 60
 
   def password=(password)
-    @password = password
+    @password = password  #WHYYY? DOES THIS NOT REVEAL THE PASSWORD?
     self.password_digest = BCrypt::Password.create(password)
   end
 end
