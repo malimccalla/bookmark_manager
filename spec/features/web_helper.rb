@@ -1,7 +1,7 @@
 
 
 
-def sign_up(email: 'a',
+def sign_up(email: 'a@a.com',
             password: '12345678',
             password_confirmation: '12345678')
   visit '/users/new'
